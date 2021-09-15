@@ -4,9 +4,17 @@ import time
 
 url = "https://playground.learnqa.ru/ajax/api/longtime_job"
 
+# Check that status is Job is NOT ready
+token = "something"
+estimate = None
+response = requests.get(url, params={"token": token})
+if response.json()["error"] == "No job linked to this token":
+    print(response.json())
+else:
+    print("Some error")
+
 # Create token
 response = requests.get(url)
-token = None
 if response.json()["token"]:
     token = response.json()["token"]
     estimate = response.json()["seconds"]

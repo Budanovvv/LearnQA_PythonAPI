@@ -1,9 +1,11 @@
+
+
 import requests
 
 
-# def test_phrase_len():
-#     phrase = input("Set a phrase: ")
-#     assert len(phrase) <= 15, f"Phrase is more than 15 characters, it is {len(phrase)} characters long"
+def test_phrase_maxlen_15():
+    phrase = input("Set a phrase: ")
+    assert len(phrase) <= 15, f"Phrase is more than 15 characters, it is {len(phrase)} characters long"
 
 
 def test_get_cookie():

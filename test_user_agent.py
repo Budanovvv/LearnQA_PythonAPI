@@ -5,7 +5,7 @@ import pytest
 
 
 class TestUserAgent:
-    with open("user_agent.json") as jsonFile:
+    with open("user_agent.js") as jsonFile:
         jsonObject = json.load(jsonFile)
         jsonFile.close()
 

@@ -30,11 +30,11 @@ class TestUserAgent:
         exp_device = test_data["device"]
 
         assert act_platform == test_data["platform"], \
-            f'platform {act_platform} is wrong,expected data: platform - {exp_platform},' \
-            f' browser - {exp_browser}, device - {exp_device}'
+            f'platform {act_platform} is wrong,' \
+            f'expected data: platform - {exp_platform},browser - {exp_browser}, device - {exp_device}'
         assert act_browser == test_data["browser"], \
-            f'browser {act_browser} is wrong,expected data:  platform {exp_platform},' \
-            f' browser {exp_browser}, device {exp_device}'
+            f'browser {act_browser} is wrong,' \
+            f'expected data:  platform {exp_platform}, browser {exp_browser}, device {exp_device}'
         assert act_device == test_data["device"], \
-            f'device {act_device} is wrong,expected data:  platform - {exp_platform},' \
-            f' browser - {exp_browser}, device - {exp_device}'
+            f'device {act_device} is wrong,' \
+            f'expected data:  platform - {exp_platform}, browser - {exp_browser}, device - {exp_device}'

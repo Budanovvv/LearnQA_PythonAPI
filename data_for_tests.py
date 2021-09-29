@@ -4,14 +4,13 @@ import random
 
 
 def generate_rnd_email():
-    rnd_part = datetime.now().strftime("%m%d%Y%H%M%S")
+    rnd_part = datetime.now().strftime("%m%d%Y%H%M%S%f")
     return f"{rnd_part}_@example.com"
 
 
 def generate_random_string(length):
     letters = string.ascii_lowercase
     return ''.join(random.choice(letters) for i in range(length))
-
 
 
 test_create_user_without_key_in_turn_test_data = [
@@ -56,10 +55,10 @@ test_create_user_with_1_and_250_symbols_test_data = [
          "email": generate_rnd_email()
      }, "username_1"),
     ({
-        "password": "123",
-        "username": generate_random_string(250),
-        "firstName": "learnqa",
-        "lastName": "learnqa",
-        "email": generate_rnd_email()
-    }, "username_250"),
+         "password": "123",
+         "username": generate_random_string(250),
+         "firstName": "learnqa",
+         "lastName": "learnqa",
+         "email": generate_rnd_email()
+     }, "username_250"),
 ]

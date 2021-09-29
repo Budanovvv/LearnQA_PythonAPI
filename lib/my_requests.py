@@ -16,12 +16,12 @@ class MyRequests:
 
     @staticmethod
     def delete(url: str, data: dict = None, headers: dict = None, cookies: dict = None):
-        return MyRequests._send(url, data, headers, cookies, 'delete')
+        return MyRequests._send(url, data, headers, cookies, 'DELETE')
 
     @staticmethod
     def _send(url: str, data: dict, headers: dict, cookies: dict, method: str):
 
-        url = f"https://playground.learnqa.ru{url}"
+        url = f"https://playground.learnqa.ru/api{url}"
 
         if headers is None:
             headers = {}

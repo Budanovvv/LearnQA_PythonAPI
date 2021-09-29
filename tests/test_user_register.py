@@ -1,6 +1,4 @@
 from datetime import datetime
-from pprint import pprint
-
 import requests
 import pytest
 from lib.base_case import BaseCase
@@ -27,7 +25,7 @@ class TestUserAuth(BaseCase, Assertions):
             "https://playground.learnqa.ru/api/user", data=data)
 
         Assertions.assert_response_status_code(response, 200)
-        Assertions.assert_json_by_name(response, "id")
+        Assertions.assert_json_has_key(response, "id")
 
     def test_create_user_with_existing_email(self):
         email = "vinkotov@example.com"
@@ -85,4 +83,4 @@ class TestUserAuth(BaseCase, Assertions):
                 f"Unexpected response text '{response.text}'"
         elif condition == "username_250":
             Assertions.assert_response_status_code(response, 200)
-            Assertions.assert_json_by_name(response, "id")
+            Assertions.assert_json_has_key(response, "id")

@@ -23,9 +23,9 @@ class TestUserAuth(BaseCase, Assertions):
 
     def test_user_auth(self):
         response2 = my_req.get("/user/auth",
-                                 headers={"x-csrf-token": self.token},
-                                 cookies={"auth_sid": self.auth_sid}
-                                 )
+                               headers={"x-csrf-token": self.token},
+                               cookies={"auth_sid": self.auth_sid}
+                               )
 
         self.assert_json_value_by_name(
             response2,

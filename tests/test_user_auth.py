@@ -6,8 +6,8 @@ from lib.assertions import Assertions
 
 class TestUserAuth(BaseCase, Assertions):
     exclude_params = [
-        ("no_cookie"),
-        ("no_header")
+        "no_cookie",
+        "no_header"
     ]
 
     def setup(self):
@@ -45,9 +45,4 @@ class TestUserAuth(BaseCase, Assertions):
                 "https://playground.learnqa.ru/api/user/auth",
                 cookies={"auth_sid": self.auth_sid})
 
-        self.assert_json_value_by_name(
-            response2,
-            "user_id",
-            0,
-            f"User is authorised by condition - {condition}"
-        )
+        self.assert_json_value_by_name(response2, "user_id", 0, f"User is authorised by condition - {condition}")
